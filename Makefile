@@ -497,7 +497,7 @@ ifneq (,$(findstring 2.4,$(LINUX_SRC)))
 	$(MAKE) -C $(RT28xx_DIR)/os/linux/
 else
 	cp -f os/linux/Makefile.libwapi.6 $(RT28xx_DIR)/os/linux/Makefile	
-	$(MAKE) -C  $(LINUX_SRC) SUBDIRS=$(RT28xx_DIR)/os/linux modules	
+	$(MAKE) -C $(LINUX_SRC) M=$(PWD)/os/linux modules
 endif	
 
 osutil:
@@ -507,7 +507,7 @@ ifneq (,$(findstring 2.4,$(LINUX_SRC)))
 	$(MAKE) -C $(RT28xx_DIR)/os/linux/
 else
 	cp -f os/linux/Makefile.6.util $(RT28xx_DIR)/os/linux/Makefile
-	$(MAKE) -C $(LINUX_SRC) SUBDIRS=$(RT28xx_DIR)/os/linux modules
+	$(MAKE) -C $(LINUX_SRC) M=$(PWD)/os/linux modules
 endif
 endif
 
@@ -518,7 +518,7 @@ ifneq (,$(findstring 2.4,$(LINUX_SRC)))
 	$(MAKE) -C $(RT28xx_DIR)/os/linux/
 else
 	cp -f os/linux/Makefile.6.netif $(RT28xx_DIR)/os/linux/Makefile
-	$(MAKE) -C $(LINUX_SRC) SUBDIRS=$(RT28xx_DIR)/os/linux modules
+	$(MAKE) -C $(LINUX_SRC) M=$(PWD)/os/linux modules
 endif
 endif
 
@@ -528,7 +528,7 @@ ifneq (,$(findstring 2.4,$(LINUX_SRC)))
 	$(MAKE) -C $(RT28xx_DIR)/os/linux/
 else
 	cp -f os/linux/Makefile.6 $(RT28xx_DIR)/os/linux/Makefile
-	$(MAKE) -C $(LINUX_SRC) SUBDIRS=$(RT28xx_DIR)/os/linux modules
+	$(MAKE) -C $(LINUX_SRC) M=$(PWD)/os/linux modules
 endif
 
 # Declare the contents of the .PHONY variable as phony.  We keep that information in a variable
